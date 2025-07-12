@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flag Quiz Game</title>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='icon.ico') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+</head>
+<body>
+  <div class="container1">
+    <h1>Flag Quiz Game</h1>
+    <br>
+    <img src="{{ url_for('static', filename='LOGO.png') }}" style="width: 200px; height: 200px;">
+    <p>How much can you score?🤔</p>
+    <button class="next-btn" onclick="direct()" style="margin-bottom: 10px;"><strong>Play Now</strong></button>
+  </div>
+
+  <script>
+    function direct(){
+        window.location.href = '/game'
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flag Quiz Game</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+  <div class="container1">
+    <h1>🌍 Flag Quiz Game</h1>
+
+    <div class="flag-box">
+      <img id="flag-img" alt="Flag" />
+    </div>
+    <div class="options">
+      <button class="option" id="option1">Option 1</button>
+      <button class="option" id="option2">Option 2</button>
+      <button class="option" id="option3">Option 3</button>
+      <button class="option" id="option4">Option 4</button>
+    </div>
+
+    <p id="result" class="result-text"></p>
+
+    <button class="next-btn" onclick="question()" style="margin-bottom: 10px;">Next Round</button>
+    <button class="next-btn" id="end" style="margin-bottom: 10px;">End Game</button>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flag Quiz Game</title>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+</head>
+<body>
+  <div class="container1">
+    <h1>🏁Final result</h1>
+    <p id="display" style="text-align: left;"></p>
+    <button class="next-btn" id="back" style="margin-bottom: 15px;">Continue</button>
+    <button class="next-btn" id="reset" style="margin-bottom: 15px;">Reset game</button>
+  </div>
+
+  <script>
+      let display = document.getElementById('display')
+      let score = localStorage.getItem('score')
+      let rounds = localStorage.getItem('rounds')
+
+      const reset = document.getElementById('reset')
+      const back = document.getElementById('back')
+
+      let message = ""
+      display.innerHTML = `<h3>score: ${score}</h3>`
+      display.innerHTML += `<h3>rounds: ${rounds}</h3>`
+      if (score/rounds === 1){
+        message = `🤩Congrats! You got a perfect score in ${rounds} rounds!🤩`
+      }
+      else if(score/rounds >= 0.5){
+        message = '😯Great Job! you got most of them right.😯' 
+      }
+      else{
+        message = '🙄try again🙄'
+      }
+      display.innerHTML += `<br><p>${message}</p>`
+      back.addEventListener('click', function(){
+        window.location.href = '/'
+      })
+      reset.addEventListener('click', function(){
+        localStorage.setItem('score', 0)
+        localStorage.setItem('rounds', 0)
+        window.location.href = '/game'
+      })
+  </script>
+</body>
+</html>
