@@ -78,3 +78,6 @@ An interactive web-based game where users test their knowledge by guessing the c
 ## 📃 License
 This project is open-source and free to use.
 
+---
+## 🖋 Author
+This project is made by Kevin Ehab.
