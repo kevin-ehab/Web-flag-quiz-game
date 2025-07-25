@@ -3,7 +3,8 @@ const option2 = document.getElementById('option2');
 const option3 = document.getElementById('option3');
 const option4 = document.getElementById('option4');
 const result = document.getElementById('result');
-const end = document.getElementById('end')
+const next = document.getElementById('next');
+const end = document.getElementById('end');
 function disable(state) {
   option1.disabled = state;
   option2.disabled = state;
@@ -22,7 +23,7 @@ let correct = "";
 
 function question() {
   disable(false);
-
+  next.disabled = true;
   fetch('/next')
     .then(res => res.json())
     .then(data => {
@@ -49,6 +50,7 @@ function handleClick(optionButton) {
   } else {
     optionButton.style.backgroundColor = 'red';
   }
+  next.disabled = false
   rounds += 1;
   result.innerText = `${score}/${rounds}`;
   disable(true);
